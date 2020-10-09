@@ -17,3 +17,13 @@
       letter-spacing: 5px;
       color: Mediumslateblue;
   }
+
+  .background {
+      background-image: url("https://i.imgur.com/xDX3YeG.jpg"); 
+      max-height: 800px;
+    background-size: cover;
+  }
+  .img-fluid {
+      max-height: 670px;
+      padding-left: 35%;
+  }
