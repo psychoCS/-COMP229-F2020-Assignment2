@@ -18,6 +18,7 @@
     padding-top: 30px;
     max-height: 750px;
     display: flex;
+    justify-content: space-around;
   } 
 
     /* CSS for the Home Page */
@@ -69,8 +70,13 @@
 
   /* CSS for About Page */
   #aboutMe {
-    padding-left: 10%;
+    padding-left: 5%;
+    margin-left:5%;
     padding-right: 10px;
+    background-image: url("https://i.imgur.com/JRzzMd7.jpg");
+    height: 700px;
+    background-size: 40%;
+    background-repeat: no-repeat;
   }
 
   #mountains {  
@@ -82,10 +88,22 @@
     width: 40%;
   }
 
+  .media{
+    padding-left: 5%;
+  }
   .media-body {
     min-width: 250px;
   }
+  .media-body1 {
+    min-width: 180px;
+  }
+
+  .mt-0 {
+    color:red;
+  }
   
   .mr-3 {
-    max-height: 800px; 
+    max-height: 550px; 
+    max-width: 390px;
+
   }
