@@ -23,31 +23,38 @@
       color: white;
   }
 
-  section {
-    display: flex;
-
-  }
-
   .background {
-      background-image: url("https://i.imgur.com/xDX3YeG.jpg"); 
-      max-height: 800px;
+    background-image: url("https://i.imgur.com/xDX3YeG.jpg");
+    height: 800px;
     background-size: cover;
   }
-  .img-fluid {
-      max-height: 750px;
-      padding-left: 30%;
+
+  section {
+    padding-top: 30px;
+    padding-left: 25%;
+    max-height: 750px;
+    display: flex;
   }
 
-@media (max-width: 980px) {
-  
-  .img-fluid {
-    
-      padding-left: 20%;
+  section .column {
+    flex-direction: column;
+    padding-top: 10px;
   }
-}
 
-@media (max-width: 700px) {
   .img-fluid {
-      padding-left: 10%;
+      max-height: 740px;
   }
+
+  .pink {
+    color: rgb(255, 0, 157);
+  }
+
+  @media (max-width: 700px) {
+    .home {
+    color: rgb(255, 0, 157);
+    }
+
+    .pink {
+        color: Mediumslateblue;
+    }
   }
