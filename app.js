@@ -1,3 +1,11 @@
+/* 
+  COMP 229 - Web Application Development (SEC. 003)
+  Fall 2020 - Assignment 1
+  Thiago Luiz Batista - Student Number 301110966
+  Work completed on 09/10/2020
+  App.js Assignment 1 File
+*/
+
 // installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
