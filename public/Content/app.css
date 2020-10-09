@@ -1,19 +1,19 @@
-/* custom css goes here */
-.navbar {
-    align-items: center;
-    color: rgb(255, 0, 157);
+  /* custom css goes here */
+  .navbar {
+      align-items: center;
+      color: rgb(255, 0, 157);
 
-}
+  }
 
-.navbar-brand img {
-    width: 80px;
-    height: 80px;
-    margin-left: 100px;
-}
+  .navbar-brand img {
+      width: 80px;
+      height: 80px;
+      margin-left: 100px;
+  }
 
-.nav-item {
-    justify-content: space-between;
-    align-items: center;
-    letter-spacing: 5px;
-    color: Mediumslateblue;
-}
+  .nav-item {
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 5px;
+      color: Mediumslateblue;
+  }
