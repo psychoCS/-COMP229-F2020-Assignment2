@@ -1,38 +1,26 @@
 <%- include partials/header.ejs %> <%- include partials/main_nav.ejs %>
 
-  <!-- Main Content -->
+  <!-- Main Message -->
   <main class="background">
-    <h1>Welcome to the <%= title %> page</h1>
-    <!-- About Me Part-->
-    <section class="about">
-      <div class="contentBx">
-        <h2 class="heading">Who am I</h2>
-        <div class="sidebyside">
-          <div class="side">
-            <p class="text"></p>
-          </div>
-          <div class="side">
-            <img
-              src="./Assets/images/mypic.png"
-              width="400"
-              height="400"
-              class="img-fluid"
-              alt="Responsive image"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div > 
-        <div class="imgBx">
+    <h1 class="home">Thiago's Portfolio <%= title %> page</h1>
+    
+    <!-- Image with url section -->
+    <section>
+      <div><h3 class="home">My goal is to always <br> give my clients a fun <br> experience that always deliver  <br> the right message </h1> </div>
+      <div>
         <img
           src="https://i.imgur.com/0wo5QLW.png"
           class="img-fluid"
-          alt="Responsive image"
-        /></div>
+          alt="A door to another universe with fog comming out of it  "
+          onclick="enterVoid()"
+        />
+          <script>
+          function enterVoid() {
+          window.location.href = "/about";
+          }
+          </script>
       </div>
     </section>
-    >
 </main>
 
   <%- include partials/bottom_nav.ejs %> <%- include partials/footer.ejs %>

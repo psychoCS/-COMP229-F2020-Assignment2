@@ -2,7 +2,6 @@
   .navbar {
       align-items: center;
       color: rgb(255, 0, 157);
-
   }
 
   .navbar-brand img {
@@ -18,12 +17,37 @@
       color: Mediumslateblue;
   }
 
+    /* CSS for the Home Page */
+
+  .home {
+      color: white;
+  }
+
+  section {
+    display: flex;
+
+  }
+
   .background {
       background-image: url("https://i.imgur.com/xDX3YeG.jpg"); 
       max-height: 800px;
     background-size: cover;
   }
   .img-fluid {
-      max-height: 670px;
-      padding-left: 35%;
+      max-height: 750px;
+      padding-left: 30%;
+  }
+
+@media (max-width: 980px) {
+  
+  .img-fluid {
+    
+      padding-left: 20%;
+  }
+}
+
+@media (max-width: 700px) {
+  .img-fluid {
+      padding-left: 10%;
+  }
   }
