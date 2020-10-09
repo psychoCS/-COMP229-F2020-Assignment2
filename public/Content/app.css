@@ -1,60 +1,78 @@
-  /* custom css goes here */
+  /* Main css goes here */
   .navbar {
       align-items: center;
       color: rgb(255, 0, 157);
   }
-
   .navbar-brand img {
       width: 80px;
       height: 80px;
       margin-left: 100px;
   }
-
   .nav-item {
       justify-content: space-between;
       align-items: center;
       letter-spacing: 5px;
       color: Mediumslateblue;
   }
+  section {
+    padding-top: 30px;
+    max-height: 750px;
+    display: flex;
+  } 
 
     /* CSS for the Home Page */
-
-  .home {
+  #home{
+    padding-left: 25%;
+    padding-right: 10px;
+  }
+  .welcome {
       color: white;
   }
-
   .background {
     background-image: url("https://i.imgur.com/xDX3YeG.jpg");
     height: 800px;
     background-size: cover;
-  }
-
-  section {
-    padding-top: 30px;
-    padding-left: 25%;
-    max-height: 750px;
-    display: flex;
-  }
-
+  }  
   section .column {
     flex-direction: column;
     padding-top: 10px;
   }
-
   .img-fluid {
       max-height: 740px;
   }
-
+  .white{
+    color: white;
+  }
   .pink {
     color: rgb(255, 0, 157);
   }
-
   @media (max-width: 700px) {
-    .home {
+    section {
+      padding-top: 10px;
+      padding-left: 0;
+      padding-right: 5px;
+    }
+
+    .img-fluid {
+      min-height: 400px;
+      min-width: 380px;
+    }
+
+    .white {
     color: rgb(255, 0, 157);
     }
 
     .pink {
         color: Mediumslateblue;
     }
+  }
+
+  /* CSS for About Page */
+  #aboutMe {
+    padding-left: 10%;
+    padding-right: 10px;
+  }
+  
+  .mr-3 {
+    max-height: 800px; 
   }
