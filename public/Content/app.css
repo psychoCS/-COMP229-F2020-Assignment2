@@ -72,6 +72,19 @@
     padding-left: 10%;
     padding-right: 10px;
   }
+
+  #mountains {  
+    background-image: url("https://i.imgur.com/CGDOrI9.gif");
+  }
+
+  .dragon {
+    padding-left: 5%;
+    width: 40%;
+  }
+
+  .media-body {
+    min-width: 250px;
+  }
   
   .mr-3 {
     max-height: 800px; 
