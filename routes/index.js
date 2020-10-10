@@ -1,7 +1,15 @@
+/* 
+  COMP 229 - Web Application Development (SEC. 003)
+  Fall 2020 - Assignment 1
+  Thiago Luiz Batista - Student Number 301110966
+  Work completed on 09/10/2020
+  index.js Assignment 1 File
+*/
+
 let express = require('express');
 let router = express.Router();
 
-/* GET home page. */
+/* GET default home page. */
 router.get('/', function (req, res, next) {
   res.render('home', {
     title: 'Home'
@@ -22,7 +30,7 @@ router.get('/about', function (req, res, next) {
   });
 });
 
-/* GET Products page. */
+/* GET Projects page. */
 router.get('/projects', function (req, res, next) {
   res.render('projects', {
     title: 'Projects'

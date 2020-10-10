@@ -1,5 +1,5 @@
 {
-  "name": "comp229-f2020-week3",
+  "name": "Comp229-f2020-TLB-Assignment1",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -21,7 +21,7 @@
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
   },
-  "description": "demo aap for COMP229 Week 3",
+  "description": "Assignment 1 for  COMP229 Fall 2020",
   "main": "index.js",
   "devDependencies": {},
   "repository": {
