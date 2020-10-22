@@ -9,6 +9,10 @@
 let express = require('express');
 let router = express.Router();
 
+let mongoose = require('mongoose');
+
+let Business = require('../models/business');
+
 /* GET default home page. */
 router.get('/', function (req, res, next) {
   res.render('home', {
@@ -48,6 +52,16 @@ router.get('/services', function (req, res, next) {
 router.get('/contact', function (req, res, next) {
   res.render('contact', {
     title: 'Contact '
+  });
+});
+
+/* GET Business Contacts page. */
+router.get('/business', function (req, res, next) {
+  
+  Business.Model.find()
+  
+  res.render('business', {
+    title: 'Business Contacts'
   });
 });
 

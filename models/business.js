@@ -1,8 +1,8 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
-let Model = mongoose.Model;
+let Model = mongoose.model;
 
-let BusinessModel = new Schema({
+let BusinessSchema = new Schema({
     contactLastName: String,
     contactFirstName: String,
     contactNumber: String,
@@ -12,4 +12,4 @@ let BusinessModel = new Schema({
         collection: 'business'
     });
 
-    module.exports.Model = Model()
+module.exports.Model = Model('Business', BusinessSchema);
