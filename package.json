@@ -1,9 +1,9 @@
 {
-  "name": "Comp229-f2020-TLB-Assignment1",
+  "name": "Comp229-f2020-TLB-Assignment2",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./server.js"
+    "start": "node server.js"
   },
   "engines": {
     "node": "^12.18.3",
@@ -18,20 +18,21 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.5.1",
+    "mongoose": "^5.10.9",
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
   },
-  "description": "Assignment 1 for  COMP229 Fall 2020",
-  "main": "index.js",
+  "description": "Assignment 2 for  COMP229 Fall 2020",
+  "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/psychoCS/COMP229-F2020-Test1.git"
+    "url": "git+https://github.com/psychoCS/-COMP229-F2020-Assignment2.git"
   },
   "author": "Thiago Batista",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/psychoCS/COMP229-F2020-Test1/issues"
+    "url": "https://github.com/psychoCS/-COMP229-F2020-Assignment2/issues"
   },
-  "homepage": "https://github.com/psychoCS/COMP229-F2020-Test1#readme"
+  "homepage": "https://github.com/psychoCS/-COMP229-F2020-Assignment2#readme"
 }
