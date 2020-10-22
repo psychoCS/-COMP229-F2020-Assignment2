@@ -2,9 +2,9 @@
 
 /** 
 *  COMP 229 - Web Application Development (SEC. 003)
-*  Fall 2020 - Assignment 2
+*  Fall 2020 - Assignment 1cls
 *  Thiago Luiz Batista - Student Number 301110966
-*  Work completed on XX/10/2020
+*  Work completed on 09/10/2020
 *  server.js Assignment 1 File
 */
 
