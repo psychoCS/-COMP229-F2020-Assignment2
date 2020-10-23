@@ -38,7 +38,21 @@ router.get('/add', (req, res, next) => {
 
 /* POST process the Add page. CREATE */
 router.post('/add', (req, res, next) => {
+    let business = Business.Model({
+        "contactLastName":req.body.contactLastName,
+        "contactFirstName":req.body.contactFirstName,
+        "contactNumber":req.body.contactNumber,
+        "emailAddress":req.body.emailAddress
+    });
 
+    Business.Model.create(business, (err, Business) => {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }    
+        res.redirect('/business');
+    });
 });
 
 
