@@ -1,0 +1,61 @@
+<div class="container">
+
+  <div>
+      <h1 class="display-4">Add the Business Contact Informations</h1>
+        <div id="errorMessage" class="alert alert-danger" role="alert" hidden>
+        </div>
+
+      <hr>
+
+    <form method="POST">
+      
+      <div class="form-group">
+        <div class="row">
+
+          <div class="col">
+            <label for="contactLastName">Contact Last Name</label>
+            <input type="text" class="form-control" id="contactLastName" aria-describedby="contactLastName"
+           required name="contactLastName" placeholder="Enter the contact LAST name" value="<%=data.contactLastName %>" required>
+          </div>
+
+          <div class="col">
+            <label for="contactFirstName">Contact First Name</label>
+            <input type="text" class="form-control" id="contactFirstName" aria-describedby="contactFirstName"
+           required name="contactFirstName" placeholder="Enter the contact FIRST name" value="<%=data.contactFirstName %>" required>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+
+          <div class="col">
+            <label for="contactNumber">Contact Number</label>
+            <input type="tel" class="form-control" id="contactNumber" name="contactNumber"
+            aria-describedby="contactNumber" placeholder="Enter the contact NUMBER" required value="<%=data.contactNumber %>" required>
+          </div>
+
+          <div class="col">
+            <label for="emailAddress">Email address</label>
+            <input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailAddress"
+              placeholder="Enter the contact's EMAIL address" required value="<%=data.emailAddress %>" required>
+          </div>
+
+        </div>  
+      </div>
+
+      <button id="submitButton" type="submit" class="btn btn-primary btn-lg" onClick="backToStart()"><i class="fas fa-wrench"></i>
+        Edit Contact</button>
+      <button id="resetButton" type="reset" class="btn btn-danger btn-lg" onClick="backToStart()"><i class="fas fa-fast-backward"></i>
+        Go back</button>
+
+    </form>
+
+      <script>
+          function backToStart() {window.location.href = "/Business";}
+      </script>
+
+  </div>
+  
+</div>
