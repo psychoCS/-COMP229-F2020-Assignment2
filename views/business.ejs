@@ -3,33 +3,39 @@
 <%- include partials/main_nav.ejs %>
   
 <% if(title == 'Business Contacts') { %>
-    <div class="row justify-content-md-center">
-        <div class="col">
+    <main class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-10">
+            <br>
+            <h1> <%= title %> </h1>
+            <br>
+                <table class="table table-striped table-info table-bordered table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col" class="text-center">Contact Last Name</th>
+                            <th scope="col" class="text-center">Contact First Name</th>
+                            <th scope="col" class="text-center">Contact Number</th>
+                            <th scope="col" class="text-center">Email Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-            <table class="table table-striped table-info table-bordered table-hover">
-                <thead class="table-primary">
-                    <tr>
-                        <th scope="col">Contact Last Name</th>
-                        <th scope="col">Contact First Name</th>
-                        <th scope="col">Contact Number</th>
-                        <th scope="col">Email Address</th>
-                    </tr>
-                </thead>
-                <tbody>
+                        <% for(let count=0; count < business.length; count++) { %>
 
-                    <% for(let count=0; count < business.length; count++) { %>
+                        <tr>
+                            <td class="text-center"><%= business[count].contactLastName %></td>                    
+                            <td class="text-center"><%= business[count].contactFirstName%></td>
+                            <td class="text-center"><%= business[count].contactNumber%></td>
+                            <td class="text-center"><%= business[count].emailAddress%></td>
+                        </tr>
+                        
+                        <% } %>
 
-                    <tr>
-                        <td><%= business[count].contactLastName %></td>                    
-                        <td><%= business[count].contactFirstName%></td>
-                        <td><%= business[count].contactNumber%></td>
-                        <td><%= business[count].emailAddress%></td>
-                    </tr>
-                    
-                    <% } %>
-
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 <% } %>
   
 <%- include partials/bottom_nav.ejs %>  
