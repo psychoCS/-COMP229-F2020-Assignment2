@@ -8,7 +8,7 @@ let BusinessSchema = new Schema({
     contactNumber: String,
     emailAddress: String
 },
-    {
+    { 
         collection: 'business'
     });
 

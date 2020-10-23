@@ -58,12 +58,17 @@ router.get('/contact', function (req, res, next) {
 /* GET Business Contacts page. */
 router.get('/business', function (req, res, next) {
   
-  Business.Model.find()
-  
-  res.render('business', {
-    title: 'Business Contacts'
+  Business.Model.find( (err, data) =>{
+    if(err){
+      console.error(err);
+      res.end()
+    }
+   
+    console.table(data, ['contactLastName', 'contactFirstName','contactNumber', 'emailAddress']);
+
+    res.render('business', {
+      title: 'Business Contacts', business: data });
   });
 });
-
 
 module.exports = router;
