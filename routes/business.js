@@ -31,7 +31,9 @@ router.get('/', function (req, res, next) {
 
 /* GET Add page. */
 router.get('/add', (req, res, next) => {
-
+  res.render('business', {
+    title: 'Add Business Contact'
+  });
 });
 
 /* POST process the Add page. CREATE */

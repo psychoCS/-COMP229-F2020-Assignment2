@@ -1,0 +1,61 @@
+<div class="container">
+
+  <div>
+      <h1 class="display-4">Add the Business Contact Informations</h1>
+        <div id="errorMessage" class="alert alert-danger" role="alert" hidden>
+        </div>
+
+      <hr>
+
+    <form method="POST">
+      
+      <div class="form-group">
+        <div class="row">
+
+          <div class="col">
+            <label for="contactLastName">Contact Last Name</label>
+            <input type="text" class="form-control" id="contactLastName" aria-describedby="contactLastName"
+           required name="contactLastName" placeholder="Enter the contact last name">
+          </div>
+
+          <div class="col">
+            <label for="contactFirstName">Contact First Name</label>
+            <input type="text" class="form-control" id="contactFirstName" aria-describedby="contactFirstName"
+           required name="contactFirstName" placeholder="Enter the contact first name">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+
+          <div class="col">
+            <label for="contactNumber">Contact Number</label>
+            <input type="tel" class="form-control" id="contactNumber" name="contactNumber"
+            aria-describedby="contactNumber" placeholder="Enter the contact's number" required>
+          </div>
+
+          <div class="col">
+            <label for="emailAddress">Email address</label>
+            <input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailAddress"
+              placeholder="Enter the contact's email address" required>
+          </div>
+
+        </div>  
+      </div>
+
+      <button id="submitButton" type="submit" class="btn btn-primary btn-lg" onClick="backToStart()"><i class="fas fa-user-plus"></i>
+        Add Contact</button>
+      <button id="resetButton" type="reset" class="btn btn-warning btn-lg"><i class="fas fa-comment-slash"></i>
+        Reset</button>
+
+    </form>
+
+      <script>
+          function backToStart() {window.location.href = "/home";}
+      </script>
+
+  </div>
+  
+</div>
