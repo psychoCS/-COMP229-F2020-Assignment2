@@ -31,20 +31,19 @@ router.get('/services', indexController.DisplayServicesPage );
 /* GET Contact Us page. */
 router.get('/contact', indexController.DisplayContactPage );
 
-/* GET Business Contacts page. */
-router.get('/business', function (req, res, next) {
-  
-  Business.Model.find( (err, data) =>{
-    if(err){
-      console.error(err);
-      res.end()
-    }
-   
-    console.table(data, ['contactLastName', 'contactFirstName','contactNumber', 'emailAddress']);
+/* GET Display Login page. */
+router.get('/login', indexController.DisplayLoginPage);
 
-    res.render('business', {
-      title: 'Business Contacts', business: data });
-  });
-});
+/* PROCESS Login page. */
+router.post('/login', indexController.ProcessLoginPage);
+
+/* GET Display Register page. */
+router.get('/register', indexController.DisplayRegisterPage);
+
+/* PROCESS Register page. */
+router.get('/register', indexController.ProcessRegisterPage);
+
+/* GET Perform Logout page. */
+router.get('/logout', indexController.PerformLogout);
 
 module.exports = router;

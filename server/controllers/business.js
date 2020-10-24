@@ -20,13 +20,15 @@ module.exports.DisplayBusinessList = (req, res, next) => {
    
     console.table(data, ['contactLastName', 'contactFirstName','contactNumber', 'emailAddress']);
     res.render('business', {
-      title: 'Business Contacts', business: data });
+        title: 'Business Contacts', business: data,
+        displayName: req.user ? req.user.displayName : ''});
   });
 }
 
 module.exports.DisplayAddPage = (req, res, next) => {
   res.render('business', {
-    title: 'Add Business Contact'
+    title: 'Add Business Contact',
+    displayName: req.user ? req.user.displayName : ''
   });
 };
 
@@ -58,7 +60,9 @@ module.exports.DisplayEditPage = (req, res, next) => {
             console.log(err);
             res.end(err);
         }
-        res.render('business', {title: 'Edit Business Contact', data:BusinessToEdit}) 
+        res.render('business', {title: 'Edit Business Contact', 
+        data:BusinessToEdit,
+        displayName: req.user ? req.user.displayName : ''}) 
     });
 };
 
