@@ -3,15 +3,11 @@
   Fall 2020 - Assignment 2
   Thiago Luiz Batista - Student Number 301110966
   Work completed on xx/10/2020
-  business.js Assignment 2 File
+  business.js Route Assignment 2 File
 */
 
 let express = require('express');
 let router = express.Router();
-
-let mongoose = require('mongoose');
-
-let Business = require('../models/business');
 
 let businessController = require('../controllers/business')
 
@@ -26,7 +22,6 @@ router.post('/add', businessController.ProcessAddPage);
 
 /* GET Edit page */
 router.get('/edit/:id', businessController.DisplayEditPage);
-
 
 /* POST process the Edit page */
 router.post('/edit/:id', businessController.ProcessEditPage);

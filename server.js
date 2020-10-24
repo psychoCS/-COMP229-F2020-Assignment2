@@ -5,14 +5,14 @@
 *  Fall 2020 - Assignment 2
 *  Thiago Luiz Batista - Student Number 301110966
 *  Work completed on XX/10/2020
-*  server.js Assignment 1 File
+*  server.js Assignment 2 File
 */
 
 /**
  * Module dependencies.
  */
 
-var app = require('./config/app');
+var app = require('./server/config/app');
 var debug = require('debug')('assignment2:server');
 var http = require('http');
 

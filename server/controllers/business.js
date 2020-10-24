@@ -8,13 +8,10 @@
 
 let express = require('express');
 let router = express.Router();
-
 let mongoose = require('mongoose');
-
 let Business = require('../models/business');
 
-module.exports.DisplayBusinessList = (req, res, next) => {
-  
+module.exports.DisplayBusinessList = (req, res, next) => {  
   Business.Model.find( (err, data) =>{
     if(err){
       console.error(err);
@@ -22,7 +19,6 @@ module.exports.DisplayBusinessList = (req, res, next) => {
     }
    
     console.table(data, ['contactLastName', 'contactFirstName','contactNumber', 'emailAddress']);
-
     res.render('business', {
       title: 'Business Contacts', business: data });
   });
@@ -62,14 +58,12 @@ module.exports.DisplayEditPage = (req, res, next) => {
             console.log(err);
             res.end(err);
         }
-
         res.render('business', {title: 'Edit Business Contact', data:BusinessToEdit}) 
     });
 };
 
 module.exports.ProcessEditPage = (req, res, next) => {
     let id = req.params.id;
-
     let updatedBusiness = Business.Model({
         "_id": id,
         "contactLastName":req.body.contactLastName,
@@ -90,7 +84,6 @@ module.exports.ProcessEditPage = (req, res, next) => {
 
 module.exports.ProcessDeletePage = (req, res, next) => {
     let id = req.params.id;
-
     Business.Model.remove({_id: id}, (err) =>{
         if(err)
         {
