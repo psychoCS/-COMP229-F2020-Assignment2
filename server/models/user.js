@@ -1,29 +1,39 @@
+/* 
+  COMP 229 - Web Application Development (SEC. 003)
+  Fall 2020 - Assignment 2
+  Thiago Luiz Batista - Student Number 301110966
+  Work completed on XX/10/2020
+  User.js Assignment 2 File
+*/
+
+
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 
-let Schema = mongoose.Schema;
-let Model = mongoose.model;
+let Schema = mongoose.Schema; // alias
+let Model = mongoose.model; // alias
 
 let UserSchema = Schema({
-    userName: String,
+    username: String,
     //password: String
-    emails: String,
+    email: String,
     displayName: String,
-    created: 
+    created:
     {
         type: Date,
-        default:Date.now()
+        default: Date.now()
     },
     updated:
     {
         type: Date,
-        default:Date.now()
+        default: Date.now()
     }
 },
-    { 
-        collection: 'users'
-    });
+{
+    collection: 'users'
+});
 
-    UserSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose);
 
-module.exports.User = Model('User', BusinessSchema);
+
+module.exports.User = Model('User', UserSchema);

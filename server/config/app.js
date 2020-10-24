@@ -6,12 +6,25 @@
   App.js Assignment 2 File
 */
 
-// installed 3rd party packages
+// Installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+
+// Create the modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+
+// Create the authentication objects
+let localStrategy = passportLocal.Strategy; // alias
+let userModel = require('../models/user');
+let User = userModel.User; // alias
+
+// Create module for auth messaging and error management
+let flash = require('connect-flash');
 
 let indexRouter = require('../routes/index');
 let businessRouter = require('../routes/business');
@@ -19,6 +32,7 @@ let usersRouter = require('../routes/users');
 
 let app = express();
 
+// Create the database setup and connection
 let mongoose = require('mongoose');
 let DB = require('./DB');
 
@@ -55,6 +69,28 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+// Setup express session
+let Auth = require('./auth');
+app.use(session({
+  secret: Auth.Secret,
+  saveUninitialized: false,
+  resave: false
+}));
+
+// Initialize flash
+app.use(flash());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Implement an user authentication Strategy
+passport.use(User.createStrategy());
+
+// serialize and deserialize the user data
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/business', businessRouter)
