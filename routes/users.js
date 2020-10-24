@@ -1,9 +1,9 @@
 /* 
   COMP 229 - Web Application Development (SEC. 003)
-  Fall 2020 - Assignment 1
+  Fall 2020 - Assignment 2
   Thiago Luiz Batista - Student Number 301110966
-  Work completed on 09/10/2020
-  users.js Assignment 1 File
+  Work completed on xx/10/2020
+  users.js Assignment 2 File
 */
 
 let express = require('express');

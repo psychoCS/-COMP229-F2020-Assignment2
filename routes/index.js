@@ -1,59 +1,35 @@
 /* 
   COMP 229 - Web Application Development (SEC. 003)
-  Fall 2020 - Assignment 1
+  Fall 2020 - Assignment 2
   Thiago Luiz Batista - Student Number 301110966
-  Work completed on 09/10/2020
-  index.js Assignment 1 File
+  Work completed on xx/10/2020
+  index.js Assignment 2 File
 */
 
 let express = require('express');
 let router = express.Router();
 
-let mongoose = require('mongoose');
-
 let Business = require('../models/business');
 
+let indexController = require('../controllers/index');
+
 /* GET default home page. */
-router.get('/', function (req, res, next) {
-  res.render('home', {
-    title: 'Home'
-  });
-});
+router.get('/', indexController.DisplayHomePage);
 
 /* GET home page. */
-router.get('/home', function (req, res, next) {
-  res.render('home', {
-    title: 'Home'
-  });
-});
+router.get('/home', indexController.DisplayHomePage );
 
 /* GET About page. */
-router.get('/about', function (req, res, next) {
-  res.render('about', {
-    title: 'About'
-  });
-});
+router.get('/about', indexController.DisplayAboutPage );
 
 /* GET Projects page. */
-router.get('/projects', function (req, res, next) {
-  res.render('projects', {
-    title: 'Projects'
-  });
-});
+router.get('/projects', indexController.DisplayprojectsPage );
 
 /* GET Services page. */
-router.get('/services', function (req, res, next) {
-  res.render('services', {
-    title: 'Services'
-  });
-});
+router.get('/services', indexController.DisplayServicesPage );
 
 /* GET Contact Us page. */
-router.get('/contact', function (req, res, next) {
-  res.render('contact', {
-    title: 'Contact '
-  });
-});
+router.get('/contact', indexController.DisplayContactPage );
 
 /* GET Business Contacts page. */
 router.get('/business', function (req, res, next) {
