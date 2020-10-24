@@ -99,6 +99,14 @@ router.post('/edit/:id', (req, res, next) => {
 router.get('/delete/:id', (req, res, next) => {
     let id = req.params.id;
 
+    Business.Model.remove({_id: id}, (err) =>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        res.redirect('/business');
+    });
 });
 
 module.exports = router;
