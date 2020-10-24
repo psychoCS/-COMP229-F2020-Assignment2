@@ -77,6 +77,22 @@ router.get('/edit/:id', (req, res, next) => {
 router.post('/edit/:id', (req, res, next) => {
     let id = req.params.id;
 
+    let updatedBusiness = Business.Model({
+        "_id": id,
+        "contactLastName":req.body.contactLastName,
+        "contactFirstName":req.body.contactFirstName,
+        "contactNumber":req.body.contactNumber,
+        "emailAddress":req.body.emailAddress
+    });
+
+    Business.Model.updateOne({_id: id}, updatedBusiness, (err) =>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        res.redirect('/business');
+    });
 });
 
 /* GET process the Delete page */
