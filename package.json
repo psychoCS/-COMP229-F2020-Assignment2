@@ -20,6 +20,7 @@
     "jquery": "^3.5.1",
     "mongoose": "^5.10.9",
     "morgan": "~1.9.1",
+    "passport": "^0.4.1",
     "popper.js": "^1.16.1"
   },
   "description": "Assignment 2 for  COMP229 Fall 2020",
