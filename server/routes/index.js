@@ -41,7 +41,7 @@ router.post('/login', indexController.ProcessLoginPage);
 router.get('/register', indexController.DisplayRegisterPage);
 
 /* PROCESS Register page. */
-router.get('/register', indexController.ProcessRegisterPage);
+router.post('/register', indexController.ProcessRegisterPage);
 
 /* GET Perform Logout page. */
 router.get('/logout', indexController.PerformLogout);

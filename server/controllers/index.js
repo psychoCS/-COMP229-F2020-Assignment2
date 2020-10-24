@@ -40,7 +40,6 @@ module.exports.DisplayContactPage = (req, res, next) => {
   displayName: req.user ? req.user.displayName : '' });
     }
 
-
 module.exports.DisplayLoginPage = (req, res, next) => {
   // check if the user is already logged in
     if(!req.user){
@@ -84,7 +83,7 @@ module.exports.DisplayRegisterPage = (req, res, next) => {
   // check if the user is already logged in
     if(!req.user)
     {
-      res.render('auth/login', 
+      res.render('auth/register', 
       {
         title: 'Register',
         messages: req.flash('registerMessage'),
@@ -95,36 +94,40 @@ module.exports.DisplayRegisterPage = (req, res, next) => {
     }
 
 module.exports.ProcessRegisterPage = (req, res, next) => {
-  // instantiate a new user object
+    // instantiate a new user object
 
-  let newUser = new User({
-    username: req.body.username,
-    email: req.body.email,
-    displayName: req.body.displayName
-  });
+    let newUser = new User({
+      username: req.body.username,
+      //password: req.body.password
+      email: req.body.email,
+      displayName: req.body.displayName
+    });
 
-  user.register(newUser, req.body.password, (err) => { 
-    if (err) {
-      console.log('Erro: Inserting New User');
-      if (err.name == "UserExistsError") {
-        req.flash('registerMessage', 'Registration Error');
-        console.log('Error: User Already Exists');
+    User.register(newUser, req.body.password, (err) => {
+      if(err)
+      {
+        console.log('Error: Inserting New User');
+        if(err.name == "UserExistsError")
+        {
+          req.flash('registerMessage', 'Registration Error');
+          console.log('Error: User Already Exists');
+        }
+        return res.redirect('/register');
       }
-      return res.redirect('/register');
-    }
-    else
-    {
-    // no direct error options
-      
-    // 
-      
-    //
-      return passport.authenticate('local')(req, res, () => {
-        res.redirect('/business');
-      });
-    }
-  });
-}
+      else
+      {
+        // no error exists
+
+        // option 1: res.redirect back to the login page and let user login
+
+        // option 2: automatically login user
+
+        return passport.authenticate('local')(req, res, ()=>{
+          res.redirect('../home');
+        });
+      }
+    })
+  }
 
 module.exports.PerformLogout = (req, res, next) => {
   req.logout();

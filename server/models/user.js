@@ -6,7 +6,6 @@
   User.js Assignment 2 File
 */
 
-
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 
