@@ -58,17 +58,30 @@ router.post('/add', (req, res, next) => {
 
 /* GET Edit page */
 router.get('/edit/:id', (req, res, next) => {
+    let id = req.params.id;
 
+    Business.Model.findById(id, (err,BusinessToEdit) =>
+    {
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+
+        res.render('business', {title: 'Edit Business Contact', data:BusinessToEdit}) 
+    });
 });
 
 
 /* POST process the Edit page */
 router.post('/edit/:id', (req, res, next) => {
+    let id = req.params.id;
 
 });
 
 /* GET process the Delete page */
 router.get('/delete/:id', (req, res, next) => {
+    let id = req.params.id;
 
 });
 
