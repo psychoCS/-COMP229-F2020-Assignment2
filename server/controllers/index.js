@@ -53,34 +53,38 @@ module.exports.DisplayLoginPage = (req, res, next) => {
     return res.redirect('/');
   }
 
-module.exports.ProcessLoginPage = (req, res, next) => {
-  passport.authenticate('local',
+module.exports.ProcessLoginPage = (req, res, next) => 
+  {
+    passport.authenticate('local', 
     (err, user, info) => {
-      // If server error
-      if (err) {
+      // server error?
+      if(err)
+      {
         return next(err);
       }
 
-      //If login erro
-      if (!user) {
+      // is there login errors?
+      if(!user)
+      {
         req.flash('loginMessage', 'Authentication Error');
-        return res.redirect('login');
+        return res.redirect('/login');
       }
 
       req.login(user, (err) => {
-        // server error
-        if (err) {
+        // db server error?
+        if(err)
+        {
           return next(err);
         }
-      
-        return res.redirect('/business');
+
+        return res.redirect('/home');
       });
 
     })(req, res, next);
 }
 
 module.exports.DisplayRegisterPage = (req, res, next) => {
-  // check if the user is already logged in
+    // check if the user is already logged in
     if(!req.user)
     {
       res.render('auth/register', 
@@ -91,7 +95,7 @@ module.exports.DisplayRegisterPage = (req, res, next) => {
       });
     }
     return res.redirect('/');
-    }
+  }
 
 module.exports.ProcessRegisterPage = (req, res, next) => {
     // instantiate a new user object
