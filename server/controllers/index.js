@@ -2,13 +2,11 @@
   COMP 229 - Web Application Development (SEC. 003)
   Fall 2020 - Assignment 2
   Thiago Luiz Batista - Student Number 301110966
-  Work completed on 09/10/2020
+  Work completed on 25/10/2020
   business index.js Assignment 2 File
 */
 
 let express = require('express');
-let router = express.Router();
-let mongoose = require('mongoose');
 let passport = require('passport');
 
 // create the User Model Instance
@@ -98,11 +96,9 @@ module.exports.DisplayRegisterPage = (req, res, next) => {
   }
 
 module.exports.ProcessRegisterPage = (req, res, next) => {
-    // instantiate a new user object
-
+    // Instantiate a new user object
     let newUser = new User({
       username: req.body.username,
-      //password: req.body.password
       email: req.body.email,
       displayName: req.body.displayName
     });
@@ -120,12 +116,6 @@ module.exports.ProcessRegisterPage = (req, res, next) => {
       }
       else
       {
-        // no error exists
-
-        // option 1: res.redirect back to the login page and let user login
-
-        // option 2: automatically login user
-
         return passport.authenticate('local')(req, res, ()=>{
           res.redirect('../home');
         });

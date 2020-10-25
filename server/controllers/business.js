@@ -2,22 +2,23 @@
   COMP 229 - Web Application Development (SEC. 003)
   Fall 2020 - Assignment 2
   Thiago Luiz Batista - Student Number 301110966
-  Work completed on xx/10/2020
+  Work completed on 25/10/2020
   business.js Assignment 2 File
 */
 
 let express = require('express');
-let router = express.Router();
-let mongoose = require('mongoose');
 let Business = require('../models/business');
 
+// Display the Business Contact List 
 module.exports.DisplayBusinessList = (req, res, next) => {  
-  Business.Model.find( (err, data) =>{
+    // If there is an error console it
+    Business.Model.find( (err, data) =>{
     if(err){
       console.error(err);
       res.end()
     }
    
+    // Otherwise render the DB IF logged in
     console.table(data, ['contactLastName', 'contactFirstName','contactNumber', 'emailAddress']);
     res.render('business', {
         title: 'Business Contacts', business: data,
@@ -25,6 +26,7 @@ module.exports.DisplayBusinessList = (req, res, next) => {
   });
 }
 
+// Display the Add Business Contact List with the same IF idea from above
 module.exports.DisplayAddPage = (req, res, next) => {
   res.render('business', {
     title: 'Add Business Contact',
@@ -32,6 +34,7 @@ module.exports.DisplayAddPage = (req, res, next) => {
   });
 };
 
+// Add to the DB the new Business contact
 module.exports.ProcessAddPage = (req, res, next) => {
     let business = Business.Model({
         "contactLastName":req.body.contactLastName,
@@ -50,6 +53,7 @@ module.exports.ProcessAddPage = (req, res, next) => {
     });
 };
 
+// Display the Edit Business Contact List with the same IF idea from above
 module.exports.DisplayEditPage = (req, res, next) => {
     let id = req.params.id;
 
@@ -66,6 +70,7 @@ module.exports.DisplayEditPage = (req, res, next) => {
     });
 };
 
+// Edit one existing Business contact on the DB
 module.exports.ProcessEditPage = (req, res, next) => {
     let id = req.params.id;
     let updatedBusiness = Business.Model({
@@ -86,6 +91,7 @@ module.exports.ProcessEditPage = (req, res, next) => {
     });
 }
 
+// Delete one existing Business contact on the DB
 module.exports.ProcessDeletePage = (req, res, next) => {
     let id = req.params.id;
     Business.Model.remove({_id: id}, (err) =>{
