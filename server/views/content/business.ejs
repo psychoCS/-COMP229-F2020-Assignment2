@@ -27,21 +27,20 @@
 
                         <% for(let count=0; count < business.length; count++) { %>
 
-                        <tr>
-                            <td class="text-center"><%= business[count].contactLastName %></td>                    
-                            <td class="text-center"><%= business[count].contactFirstName%></td>
-                            <td class="text-center"><%= business[count].contactNumber%></td>
-                            <td class="text-center"><%= business[count].emailAddress%></td>
-                            <% if(typeof displayName == 'string' && displayName) {%>
-                                <td>
-                                    <a href="/Business/edit/<%= business[count]._id %>" class="btn btn-success btn-sm "><i class="fas fa-wrench"></i> Edit</a>
-                                </td>
-                                <td>
-                                    <a href="/Business/delete/<%= business[count]._id %>" class="btn btn-danger btn-sm "><i class="fas fa-user-times"></i> Delete</a>
-                                </td>
-                            <% } %>
-
-                        </tr>
+                            <tr>
+                                <td class="text-center"><%= business[count].contactLastName %></td>                    
+                                <td class="text-center"><%= business[count].contactFirstName%></td>
+                                <td class="text-center"><%= business[count].contactNumber%></td>
+                                <td class="text-center"><%= business[count].emailAddress%></td>
+                                <% if(typeof displayName == 'string' && displayName) {%>
+                                    <td>
+                                        <a href="/Business/edit/<%= business[count]._id %>" class="btn btn-success btn-sm "><i class="fas fa-wrench"></i> Edit</a>
+                                    </td>
+                                    <td>
+                                        <a href="/Business/delete/<%= business[count]._id %>" class="btn btn-danger btn-sm "><i class="fas fa-user-times"></i> Delete</a>
+                                    </td>
+                                <% } %>
+                            </tr>
                         
                         <% } %>
 
